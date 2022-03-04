@@ -1,0 +1,19 @@
+{
+  "name": "rad_common_js",
+  "version": "1.0.0",
+  "description": "JS Framework for RadCommon Rails Projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radicalbear/rad_common_js.git"
+  },
+  "author": "Eric Bundy <eric.bundy@radicalbear.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radicalbear/rad_common_js/issues"
+  },
+  "homepage": "https://github.com/radicalbear/rad_common_js#readme"
+}
