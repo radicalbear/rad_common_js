@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 export class RadCommonGlobalSearch {
-    static globalSetup() {
+    static setup() {
         $(".search-option").click(function() {
             $('.global_search_scope').val($(this).data("search-scope"));
             $(".global_search_name").focus();
