@@ -5,5 +5,5 @@ import $ from 'jquery'
 
 $(document).ready( function() {
     RadCommonAutoComplete.setup();
-    RadCommonGlobalSearch.globalSetup();
+    RadCommonGlobalSearch.setup();
 })
