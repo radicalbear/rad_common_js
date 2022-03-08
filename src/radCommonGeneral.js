@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 export class RadCommonGeneral {
     static setup() {
         $("#merge-all").click(function() {
