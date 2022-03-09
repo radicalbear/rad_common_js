@@ -10,7 +10,7 @@ export class AreYouSure {
 
     static setupDatePickers() {
         $('.date, .time, .datetime_local').on('dp.change', function(e) {
-            let didChange = e.date && e.oldDate && !RadCommon.sameDate(e.date, e.oldDate);
+            let didChange = e.date && e.oldDate && !AreYouSure.sameDate(e.date, e.oldDate);
             if(didChange) {
                 $(this).trigger('change');
             }
@@ -31,6 +31,6 @@ export class AreYouSure {
     };
 
     static sameDate (date, oldDate) {
-        return date.isSame(oldDate, RadCommon.datePrecision(this));
+        return date.isSame(oldDate, AreYouSure.datePrecision(this));
     };
 }
