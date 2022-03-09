@@ -1,6 +1,6 @@
 {
   "name": "rad_common_js",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "JS Framework for RadCommon Rails Projects",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,15 @@
   },
   "dependencies": {
     "jquery": "^3.3.1",
-    "jquery-ui": "^1.12.1"
+    "jquery-ui": "^1.12.1",
+    "@rails/actiontext": "^6.0.2-1",
+    "@rails/webpacker": "5.4.3",
+    "bootstrap": "^4.0.0",
+    "bootstrap-select": "^1.13.18",
+    "jquery-ujs": "^1.2.3",
+    "popper.js": "^1.16.1",
+    "postcss": "^8.2.10",
+    "readmore-js": "^2.2.1"
   },
   "repository": {
     "type": "git",

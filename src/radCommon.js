@@ -1,5 +1,10 @@
 import $ from 'jquery';
 
+require('jquery');
+require('popper.js')
+require('bootstrap');
+require('bootstrap-select');
+require('readmore-js');
 import {RadCommonGlobalSearch} from "./radCommonGlobalSearch";
 import {RadCommonAutoComplete} from "./radCommonAutoComplete";
 import {RadCommonDynamicUpdater} from "./radCommonDynamicUpdater";
