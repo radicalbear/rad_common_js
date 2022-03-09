@@ -5,6 +5,7 @@ require('popper.js')
 require('bootstrap');
 require('bootstrap-select');
 require('readmore-js');
+require('jquery.are-you-sure');
 import {RadCommonGlobalSearch} from "./radCommonGlobalSearch";
 import {RadCommonAutoComplete} from "./radCommonAutoComplete";
 import {RadCommonDynamicUpdater} from "./radCommonDynamicUpdater";
@@ -17,6 +18,7 @@ export class RadCommon {
             RadCommonGlobalSearch.setup();
             RadCommonGeneral.setup();
             RadCommonDynamicUpdater.setup();
+            $('.simple_form').areYouSure();
         })
     }
 }

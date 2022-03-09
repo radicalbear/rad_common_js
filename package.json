@@ -1,6 +1,6 @@
 {
   "name": "rad_common_js",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "description": "JS Framework for RadCommon Rails Projects",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "@rails/webpacker": "5.4.3",
     "bootstrap": "^4.0.0",
     "bootstrap-select": "^1.13.18",
+    "jquery.are-you-sure": "^1.9.0",
     "jquery-ujs": "^1.2.3",
     "popper.js": "^1.16.1",
     "postcss": "^8.2.10",
