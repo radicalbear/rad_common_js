@@ -121,11 +121,9 @@ export class DateTimePicker {
     };
 
     static setup() {
-        $(document).ready(function() {
-            let dateTimePicker = new DateTimePicker();
-            DateTimePicker.disableHtml5();
-            return dateTimePicker.addDateEvents();
-        })
+        let dateTimePicker = new DateTimePicker();
+        DateTimePicker.disableHtml5();
+        return dateTimePicker.addDateEvents();
     }
 
 }
