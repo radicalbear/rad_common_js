@@ -20,8 +20,8 @@ export class RadCommon {
             RadCommonGlobalSearch.setup();
             RadCommonGeneral.setup();
             RadCommonDynamicUpdater.setup();
-            DateTimePicker.setup();
             AreYouSure.setup();
+            DateTimePicker.setup();
         })
     }
 }
