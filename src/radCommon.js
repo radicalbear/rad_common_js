@@ -11,6 +11,7 @@ import {RadCommonAutoComplete} from "./radCommonAutoComplete";
 import {RadCommonDynamicUpdater} from "./radCommonDynamicUpdater";
 import {RadCommonGeneral} from "./radCommonGeneral";
 import {AreYouSure} from "./areYouSure";
+import {DateTimePicker} from "./dateTimePicker";
 
 export class RadCommon {
     static setup() {
@@ -19,6 +20,7 @@ export class RadCommon {
             RadCommonGlobalSearch.setup();
             RadCommonGeneral.setup();
             RadCommonDynamicUpdater.setup();
+            DateTimePicker.setup();
             AreYouSure.setup();
         })
     }
