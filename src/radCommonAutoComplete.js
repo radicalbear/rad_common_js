@@ -1,5 +1,8 @@
 import jQuery from 'jquery'
 
+require('jquery-ui');
+require('jquery-ui/ui/widgets/autocomplete');
+
 export class RadCommonAutoComplete {
     constructor( e ) {
         this.e = e;
