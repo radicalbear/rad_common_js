@@ -12,6 +12,7 @@ import {RadCommonDynamicUpdater} from "./radCommonDynamicUpdater";
 import {RadCommonGeneral} from "./radCommonGeneral";
 import {AreYouSure} from "./areYouSure";
 import {DateTimePicker} from "./dateTimePicker";
+import {DeviseAuthy} from "./deviseAuthy";
 
 export class RadCommon {
     static setup() {
@@ -22,6 +23,7 @@ export class RadCommon {
             RadCommonDynamicUpdater.setup();
             DateTimePicker.setup();
             AreYouSure.setup();
+            DeviseAuthy.setup();
         })
     }
 }
