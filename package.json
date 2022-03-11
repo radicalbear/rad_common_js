@@ -1,6 +1,6 @@
 {
   "name": "rad_common_js",
-  "version": "1.8.4",
+  "version": "1.8.5",
   "description": "JS Framework for RadCommon Rails Projects",
   "main": "index.js",
   "scripts": {
