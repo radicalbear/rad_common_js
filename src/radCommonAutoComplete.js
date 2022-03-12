@@ -6,10 +6,10 @@ require('jquery-ui/ui/widgets/autocomplete');
 export class RadCommonAutoComplete {
     constructor( e ) {
         this.e = e;
-        this.delimiter = jQuery(e).attr('data-delimiter') || null;
-        this.min_length = jQuery(e).attr('min-length') || 2;
-        this.append_to = jQuery(e).attr('data-append-to') || null;
-        this.autoFocus = jQuery(e).attr('data-auto-focus') || false;
+        this.e.delimiter = jQuery(e).attr('data-delimiter') || null;
+        this.e.min_length = jQuery(e).attr('min-length') || 2;
+        this.e.append_to = jQuery(e).attr('data-append-to') || null;
+        this.e.autoFocus = jQuery(e).attr('data-auto-focus') || false;
 
         this.autoCompleteSetup();
     }
