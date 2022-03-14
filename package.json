@@ -1,6 +1,6 @@
 {
   "name": "rad_common_js",
-  "version": "1.8.9",
+  "version": "1.9.0",
   "description": "JS Framework for RadCommon Rails Projects",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,8 @@
     "popper.js": "^1.16.1",
     "postcss": "^8.2.10",
     "readmore-js": "^2.2.1",
-    "tempusdominus-bootstrap-4": "^5.39.0"
+    "tempusdominus-bootstrap-4": "^5.39.0",
+    "trix": "^1.0.0"
   },
   "repository": {
     "type": "git",
