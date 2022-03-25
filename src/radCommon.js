@@ -24,6 +24,11 @@ export class RadCommon {
             DateTimePicker.setup();
             AreYouSure.setup();
             DeviseAuthy.setup();
+            RadCommon.bootstrapSetup();
         })
+    }
+
+    static bootstrapSetup() {
+        $('[data-toggle="tooltip"]').tooltip();
     }
 }
