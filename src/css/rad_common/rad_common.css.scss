@@ -177,6 +177,12 @@ td.fa.security-group-td { border-style: none; }
   text-align: center;
 }
 
+td {
+  .green-check {
+    width: 100%;
+  }
+}
+
 .red-x {
   font-size: 125%;
   color: red;
