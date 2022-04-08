@@ -183,8 +183,11 @@ td.green-check {
 .red-x {
   font-size: 125%;
   color: red;
-  width: 100%;
   text-align: center;
+}
+
+td.red-x {
+  width: 100%;
 }
 
 #attachment_layout  {
