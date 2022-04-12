@@ -6,7 +6,7 @@ require('bootstrap');
 require('bootstrap-select');
 require('readmore-js');
 require('jquery.are-you-sure');
-import('bootstrap-select/dist/css/bootstrap-select.min.css');
+require('bootstrap-select');
 import {RadCommonGlobalSearch} from "./radCommonGlobalSearch";
 import {RadCommonAutoComplete} from "./radCommonAutoComplete";
 import {RadCommonDynamicUpdater} from "./radCommonDynamicUpdater";
