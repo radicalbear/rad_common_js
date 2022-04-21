@@ -21,6 +21,7 @@ export class RadCommonGeneral {
 
         this.duplicates();
         this.readmore();
+        this.arrayFields();
     }
 
     static duplicates() {
@@ -34,6 +35,15 @@ export class RadCommonGeneral {
                 return $(this).width(columnWidths[index]);
             });
         }
+    }
+
+    static arrayFields() {
+        $(".array-add-btn").click(function() {
+            let clone;
+            clone = $(this).closest(".form-group").find("input").last().clone();
+            clone.val("");
+            $(clone).insertBefore($(this));
+        });
     }
 
     static readmore() {
