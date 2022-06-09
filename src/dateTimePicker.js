@@ -76,13 +76,13 @@ export class DateTimePicker {
                     showClear: true
                 },
                 icons: {
-                    time: 'fa fa-clock-o',
+                    time: 'fa fa-clock fa-regular',
                     date: 'fa fa-calendar',
                     up: 'fa fa-arrow-up',
                     down: 'fa fa-arrow-down',
                     previous: 'fa fa-arrow-left',
                     next: 'fa fa-arrow-right',
-                    today: 'fa fa-calendar-o',
+                    today: 'fa fa-calendar fa-regular',
                     clear: 'fa fa-times-circle'
                 }
             });
