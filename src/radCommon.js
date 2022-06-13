@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
 require('jquery');
+require("@rails/ujs").start();
 require('popper.js')
 require('bootstrap');
 require('bootstrap-select');

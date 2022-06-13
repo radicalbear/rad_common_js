@@ -1,6 +1,6 @@
 {
   "name": "rad_common_js",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "JS Framework for RadCommon Rails Projects",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@rails/actiontext": "^6.0.2-1",
+    "@rails/ujs": "^6.0.5",
     "@rails/webpacker": "5.4.3",
     "bootstrap": "^4.0.0",
     "bootstrap-select": "^1.13.18",
