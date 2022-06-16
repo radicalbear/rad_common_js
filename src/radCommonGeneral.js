@@ -51,7 +51,8 @@ export class RadCommonGeneral {
             $('.read-more').readmore({
                 speed: 75,
                 moreLink: "<a class='btn btn-primary btn-sm read-more-btn more-btn' href='#'><div>Read more</div></a>",
-                lessLink: "<a class='btn btn-primary btn-sm read-more-btn close-btn' href='#'><div>Close</div></a>"
+                lessLink: "<a class='btn btn-primary btn-sm read-more-btn close-btn' href='#'><div>Close</div></a>",
+                selector: '.read-more'
             });
         }
     }
