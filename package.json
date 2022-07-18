@@ -1,6 +1,6 @@
 {
   "name": "rad_common_js",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "JS Framework for RadCommon Rails Projects",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,10 @@
     "readmore-js": "^2.2.1",
     "tempusdominus-bootstrap-4": "^5.39.0",
     "trix": "^1.0.0"
+  },
+  "resolutions": {
+    "glob-parent": "^5.1.2",
+    "nth-check": "^2.0.1"
   },
   "repository": {
     "type": "git",
