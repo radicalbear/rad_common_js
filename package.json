@@ -1,6 +1,6 @@
 {
   "name": "rad_common_js",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "description": "JS Framework for RadCommon Rails Projects",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,7 @@
     "jquery.are-you-sure": "^1.9.0",
     "popper.js": "^1.16.1",
     "postcss": "^8.2.10",
+    "chosen-js": "^1.8.7",
     "readmore-js": "^2.2.1",
     "tempusdominus-bootstrap-4": "^5.39.0",
     "trix": "^1.0.0"

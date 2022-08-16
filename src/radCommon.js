@@ -15,6 +15,7 @@ import {RadCommonGeneral} from "./radCommonGeneral";
 import {AreYouSure} from "./areYouSure";
 import {DateTimePicker} from "./dateTimePicker";
 import {DeviseAuthy} from "./deviseAuthy";
+import {RadChosen} from "./radChosen";
 
 export class RadCommon {
     static setup() {
@@ -27,6 +28,7 @@ export class RadCommon {
             AreYouSure.setup();
             DeviseAuthy.setup();
             RadCommon.bootstrapSetup();
+            RadChosen.setup();
         })
     }
 
