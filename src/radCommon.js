@@ -18,18 +18,24 @@ import {DeviseAuthy} from "./deviseAuthy";
 import {RadChosen} from "./radChosen";
 
 export class RadCommon {
-    static setup() {
+    static setup(options) {
         $(document).ready( function() {
             RadCommonAutoComplete.setup();
             RadCommonGlobalSearch.setup();
             RadCommonGeneral.setup();
             RadCommonDynamicUpdater.setup();
-            DateTimePicker.setup();
+            if(RadCommon.isDatePickerEnabled(options)) {
+                DateTimePicker.setup();
+            }
             AreYouSure.setup();
             DeviseAuthy.setup();
             RadCommon.bootstrapSetup();
             RadChosen.setup();
         })
+    }
+
+    static isDatePickerEnabled(options) {
+        return !options || !options.hasOwnProperty('datePickerEnabled') || options.datePickerEnabled
     }
 
     static bootstrapSetup() {
