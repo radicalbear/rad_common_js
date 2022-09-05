@@ -180,15 +180,9 @@ export class RadCommonAutoComplete {
     }
 
     static setup() {
-        jQuery(document).ready( function()
-        {
-            RadCommonAutoComplete.display_autocomplete_errors();
-        } );
-
-        jQuery(document).ready(function(){
-            jQuery('input[data-autocomplete]').focus( function() {
-                new RadCommonAutoComplete(this);
-            })
+        RadCommonAutoComplete.display_autocomplete_errors();
+        jQuery('input[data-autocomplete]').focus( function() {
+            new RadCommonAutoComplete(this);
         });
     }
 
