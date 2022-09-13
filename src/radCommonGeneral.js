@@ -22,6 +22,7 @@ export class RadCommonGeneral {
         this.duplicates();
         this.readmore();
         this.arrayFields();
+        this.termsAndConditions();
     }
 
     static duplicates() {
@@ -76,4 +77,16 @@ export class RadCommonGeneral {
             return $('.email-message').hide();
         }
     };
+
+    static termsAndConditions() {
+      if($('#accept_terms').length) {
+        $('#accept_terms').on('change', (event) => {
+          if($(event.target).is(':checked')) {
+            $(':submit').prop('disabled', false)
+          } else {
+            $(':submit').prop('disabled', true)
+          }
+        })
+      }
+    }
 }
