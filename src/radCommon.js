@@ -13,7 +13,6 @@ import {RadCommonAutoComplete} from "./radCommonAutoComplete";
 import {RadCommonDynamicUpdater} from "./radCommonDynamicUpdater";
 import {RadCommonGeneral} from "./radCommonGeneral";
 import {AreYouSure} from "./areYouSure";
-import {DateTimePicker} from "./dateTimePicker";
 import {DeviseAuthy} from "./deviseAuthy";
 import {RadChosen} from "./radChosen";
 
@@ -24,9 +23,6 @@ export class RadCommon {
             RadCommonGlobalSearch.setup();
             RadCommonGeneral.setup();
             RadCommonDynamicUpdater.setup();
-            if(RadCommon.isDatePickerEnabled(options)) {
-                DateTimePicker.setup();
-            }
             AreYouSure.setup();
             DeviseAuthy.setup();
             RadCommon.bootstrapSetup();
