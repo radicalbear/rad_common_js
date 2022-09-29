@@ -1,6 +1,6 @@
 {
   "name": "rad_common_js",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "JS Framework for RadCommon Rails Projects",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "url": "git+https://github.com/radicalbear/rad_common_js.git"
   },
   "author": "Eric Bundy <eric.bundy@radicalbear.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/radicalbear/rad_common_js/issues"
   },
