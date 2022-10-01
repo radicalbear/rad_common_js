@@ -15,6 +15,7 @@ import {RadCommonGeneral} from "./radCommonGeneral";
 import {AreYouSure} from "./areYouSure";
 import {DeviseAuthy} from "./deviseAuthy";
 import {RadChosen} from "./radChosen";
+import {DateSetup} from "./dateSetup";
 
 export class RadCommon {
     static setup(options) {
@@ -27,11 +28,8 @@ export class RadCommon {
             DeviseAuthy.setup();
             RadCommon.bootstrapSetup();
             RadChosen.setup();
+            DateSetup.setup();
         })
-    }
-
-    static isDatePickerEnabled(options) {
-        return !options || !options.hasOwnProperty('datePickerEnabled') || options.datePickerEnabled
     }
 
     static bootstrapSetup() {
