@@ -8,6 +8,8 @@ require('bootstrap-select');
 require('readmore-js');
 require('jquery.are-you-sure');
 require('bootstrap-select');
+require('./richtext');
+
 import {RadCommonGlobalSearch} from "./radCommonGlobalSearch";
 import {RadCommonAutoComplete} from "./radCommonAutoComplete";
 import {RadCommonDynamicUpdater} from "./radCommonDynamicUpdater";
