@@ -5,12 +5,14 @@ export class DateSetup {
         $('input[type=date]').focus(function(){
             if($(this).val() === '') {
                 $(this).val(moment().format('YYYY-MM-DD'));
+                $(this).trigger('change');
             }
         });
 
         $('input[type=datetime-local]').focus(function(){
             if($(this).val() === '') {
                 $(this).val(moment().format('YYYY-MM-DDTHH:mm'));
+                $(this).trigger('change');
             }
         });
     }
