@@ -18,6 +18,7 @@ import {AreYouSure} from "./areYouSure";
 import {DeviseAuthy} from "./deviseAuthy";
 import {RadChosen} from "./radChosen";
 import {DateSetup} from "./dateSetup";
+import {RadSearch} from "./radSearch";
 
 export class RadCommon {
     static setup(options) {
@@ -31,6 +32,7 @@ export class RadCommon {
             RadCommon.bootstrapSetup();
             RadChosen.setup();
             DateSetup.setup();
+            RadSearch.setup();
         })
     }
 
