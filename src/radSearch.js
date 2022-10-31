@@ -35,7 +35,7 @@ export class RadSearch {
           if (data.length) {
             data.forEach((item) =>
               opts.push($.extend(true, item, {
-                text: item.value,
+                text: item.label,
                 value: item.id,
                 data: {
                   subtext: showSubtext && !!item.columns ? item.columns.join(' ') : null
