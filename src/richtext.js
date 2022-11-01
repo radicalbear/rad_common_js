@@ -41,7 +41,7 @@ class RichText {
     }
 
     removeAttachmentButton() {
-        this.buttonGroupFileTools.removeChild(this.attachmentButton);
+        this.trixButtonRow.removeChild(this.attachmentButton);
     }
 
     insertNewHeadingButton() {
@@ -73,8 +73,8 @@ class RichText {
         return this.toolbarElement.querySelector('[data-trix-button-group=block-tools]');
     }
 
-    get buttonGroupFileTools() {
-        return this.toolbarElement.querySelector('[data-trix-button-group=file-tools]');
+    get trixButtonRow() {
+        return this.toolbarElement.querySelector('.trix-button-row');
     }
 
     get buttonGroupTextTools() {
@@ -90,7 +90,7 @@ class RichText {
     }
 
     get attachmentButton() {
-        return this.toolbarElement.querySelector('[data-trix-action=attachFiles]')
+        return this.toolbarElement.querySelector('[data-trix-button-group=file-tools]')
     }
 
     get quoteButton() {
