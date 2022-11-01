@@ -31,12 +31,17 @@ class RichText {
 
     insertHeadingElements() {
         this.removeOriginalHeadingButton();
+        this.removeAttachmentButton();
         this.insertNewHeadingButton();
         this.insertHeadingDialog();
     }
 
     removeOriginalHeadingButton() {
         this.buttonGroupBlockTools.removeChild(this.originalHeadingButton);
+    }
+
+    removeAttachmentButton() {
+        this.buttonGroupBlockTools.removeChild(this.attachmentButton);
     }
 
     insertNewHeadingButton() {
@@ -78,6 +83,10 @@ class RichText {
 
     get originalHeadingButton() {
         return this.toolbarElement.querySelector('[data-trix-attribute=heading1]');
+    }
+
+    get attachmentButton() {
+        return this.toolbarElement.querySelector('[data-trix-button-group=file-tools]')
     }
 
     get quoteButton() {
