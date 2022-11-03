@@ -28,7 +28,7 @@ export class RadSearch {
             opts.push(
               $.extend(true, { class: 'border-bottom' }, {
                 text: this.plugin.options.template.clear_option,
-                value: null
+                value: ''
               })
             );
           }
