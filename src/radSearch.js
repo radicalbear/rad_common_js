@@ -28,7 +28,7 @@ export class RadSearch {
             opts.push(
               $.extend(true, { class: 'border-bottom' }, {
                 text: this.plugin.options.template.clear_option,
-                value: ''
+                value: null
               })
             );
           }
@@ -54,6 +54,7 @@ export class RadSearch {
         }
       };  
       $('.selectpicker-search').selectpicker({ liveSearch: true }).ajaxSelectPicker(options);
+      $('.selectpicker-search').selectpicker('refresh');
     });
   }
 }
