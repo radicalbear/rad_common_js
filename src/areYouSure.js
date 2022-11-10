@@ -1,7 +1,7 @@
-import $ from "jquery";
+import $ from 'jquery';
 
 export class AreYouSure {
-    static setup() {
-        $('.simple_form').areYouSure();
-    }
+  static setup() {
+    $('.simple_form').areYouSure();
+  }
 }

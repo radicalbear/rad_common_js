@@ -1,4 +1,4 @@
-import $ from 'jquery'
+import $ from 'jquery';
 
 export class RadSearch {
   static setup() {
@@ -7,9 +7,9 @@ export class RadSearch {
         e.preventDefault();
         let filterName = window.prompt('Enter a filter name', '');
         if (filterName) {
-        $('#search_saved_name').val(filterName);
+          $('#search_saved_name').val(filterName);
         } else {
-            window.alert('Name was not provided, filter could not be saved.');
+          window.alert('Name was not provided, filter could not be saved.');
         }
         $('.simple_form.search').submit();
       });
