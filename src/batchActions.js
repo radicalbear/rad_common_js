@@ -35,6 +35,6 @@ export class BatchActions {
           return $('.batch-action-tooltip').tooltip('enable');
         }
       }
-    })
+    });
   }
 }

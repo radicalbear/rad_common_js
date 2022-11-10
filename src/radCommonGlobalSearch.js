@@ -83,7 +83,7 @@ export class RadCommonGlobalSearch {
       $('.global-search-autocomplete').attr('placeholder', 'Super Search');
       $('.global-search-dropdown').toggle();
     }
-    $('.super_search').change(function(event) {
+    $('.super_search').change(function(_event) {
       if ($(this).is(':checked')) {
         $('.super_search').val('1');
         $('.global-search-autocomplete').attr('placeholder', 'Super Search');
