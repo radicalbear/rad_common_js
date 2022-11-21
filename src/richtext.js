@@ -8,24 +8,11 @@ addEventListener('trix-initialize', function (event) {
   new RichText(event.target);
 });
 
-addEventListener('trix-action-invoke', function (event) {
-  if (event.actionName == 'x-horizontal-rule') insertHorizontalRule();
-
-  function insertHorizontalRule() {
-    event.target.editor.insertAttachment(buildHorizontalRule());
-  }
-
-  function buildHorizontalRule() {
-    return new Trix.Attachment({ content: '<hr>', contentType: 'vnd.rubyonrails.horizontal-rule.html' });
-  }
-});
-
 class RichText {
   constructor(element) {
     this.element = element;
 
     this.insertHeadingElements();
-    this.insertDividerElements();
     this.insertColorElements();
   }
 
@@ -50,10 +37,6 @@ class RichText {
 
   insertHeadingDialog() {
     this.dialogsElement.insertAdjacentHTML('beforeend', this.dialogHeadingTemplate);
-  }
-
-  insertDividerElements() {
-    this.quoteButton.insertAdjacentHTML('afterend', this.horizontalButtonTemplate);
   }
 
   insertColorElements() {
@@ -99,10 +82,6 @@ class RichText {
 
   get toolbarElement() {
     return this.element.toolbarElement;
-  }
-
-  get horizontalButtonTemplate() {
-    return '<button type="button" class="trix-button trix-button--icon trix-button--icon-horizontal-rule" data-trix-action="x-horizontal-rule" tabindex="-1" title="Divider">Divider</button>';
   }
 
   get headingButtonTemplate() {
