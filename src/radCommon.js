@@ -16,7 +16,6 @@ import { RadCommonAutoComplete } from './radCommonAutoComplete';
 import { RadCommonDynamicUpdater } from './radCommonDynamicUpdater';
 import { RadCommonGeneral } from './radCommonGeneral';
 import { AreYouSure } from './areYouSure';
-import { DeviseTwilioVerify } from './deviseTwilioVerify';
 import { RadChosen } from './radChosen';
 import { DateSetup } from './dateSetup';
 import { RadSearch } from './radSearch';
@@ -30,7 +29,6 @@ export class RadCommon {
       RadCommonGeneral.setup();
       RadCommonDynamicUpdater.setup();
       AreYouSure.setup();
-      DeviseTwilioVerify.setup();
       RadCommon.bootstrapSetup();
       RadChosen.setup();
       DateSetup.setup();
