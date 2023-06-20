@@ -20,6 +20,7 @@ import { RadChosen } from './radChosen';
 import { DateSetup } from './dateSetup';
 import { RadSearch } from './radSearch';
 import { BatchActions } from './batchActions';
+import { Duplicates } from './duplicates';
 
 export class RadCommon {
   static setup() {
@@ -33,6 +34,7 @@ export class RadCommon {
       RadChosen.setup();
       DateSetup.setup();
       RadSearch.setup();
+      Duplicates.setup();
       BatchActions.setup();
     });
   }
