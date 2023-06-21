@@ -4,7 +4,7 @@ export class Duplicates {
             $('.duplicate-card').hide();
             Duplicates.checkForDuplicates();
             let form = $('#new_client');
-            form.find('input').not('#create_anyway').change(function() {
+            form.find('input').not('#create-anyway').change(function() {
                 Duplicates.checkForDuplicates();
             });
 
