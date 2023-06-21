@@ -47,7 +47,7 @@ export class Duplicates {
             $('.duplicate-card .duplicate-data').html(html);
             $('.duplicate-card').show();
             this.toggleSave(true);
-            $('.dup_record_btn').attr('href', dupe[0].duplicate_path);
+            $('.dup_record_btn').attr('href', data[0].duplicate_path);
             $('.card-body').addClass('duplicate-body');
         } else {
             $('.toast').toast('hide');
