@@ -8,7 +8,7 @@ export class Duplicates {
                 Duplicates.checkForDuplicates();
             });
 
-            $('#create_anyway').change(function() {
+            $('#create-anyway').change(function() {
                 let disabled = !$(this).prop('checked');
                 Duplicates.toggleSave(disabled);
             });
