@@ -39,11 +39,15 @@ export class Duplicates {
     static processDuplicateData(data) {
         if(data.duplicate) {
             $('.toast').toast('show');
-            $('#toast-text').html(data.duplicate_data.join('<br />'));
-            $('.duplicate-card .duplicate-data').html(data.duplicate_data.join('<br />'));
+            let html = '';
+            data.duplicates.forEach(function(dupe) {
+                html += dupe.duplicate_data.join('<br />');
+            });
+            $('#toast-text').html(html);
+            $('.duplicate-card .duplicate-data').html(html);
             $('.duplicate-card').show();
             this.toggleSave(true);
-            $('.dup_record_btn').attr('href', data.duplicate_path);
+            $('.dup_record_btn').attr('href', dupe[0].duplicate_path);
             $('.card-body').addClass('duplicate-body');
         } else {
             $('.toast').toast('hide');
