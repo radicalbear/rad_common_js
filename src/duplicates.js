@@ -39,15 +39,26 @@ export class Duplicates {
     static processDuplicateData(data) {
         if(data.duplicate) {
             $('.toast').toast('show');
-            let html = '';
-            data.duplicates.forEach(function(dupe) {
-                html += dupe.duplicate_data.join('<br />');
+            let html = '<table class=\'table\'>';
+            let first = data.duplicates[0].duplicate_data;
+            html += '<tr>';
+            Object.keys(first).forEach(field => {
+                html += `<th>${field}</th>`;
             });
-            $('#toast-text').html(html);
+            html += '<th>Actions</th>';
+            html += '</tr>';
+            data.duplicates.forEach(duplicate => {
+                html += '<tr>';
+                Object.values(duplicate.duplicate_data).forEach(value => {
+                    html += `<td>${value || ''}</td>`;
+                });
+                html += `<td><a href='${duplicate.duplicate_path}' class='btn btn-sm btn-primary'>Show Duplicate</a></td>`;
+                html += '</tr>';
+            });
+            html += '</table>';
             $('.duplicate-card .duplicate-data').html(html);
             $('.duplicate-card').show();
             this.toggleSave(true);
-            $('.dup_record_btn').attr('href', data.duplicates[0].duplicate_path);
             $('.card-body').addClass('duplicate-body');
         } else {
             $('.toast').toast('hide');
