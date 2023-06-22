@@ -3,7 +3,7 @@ export class Duplicates {
         if($('#duplicate-toast').length) {
             $('.duplicate-card').hide();
             Duplicates.checkForDuplicates();
-            let form = $('#new_client');
+            let form = $('form.simple_form');
             form.find('input').not('#create-anyway').change(function() {
                 Duplicates.checkForDuplicates();
             });
