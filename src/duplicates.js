@@ -32,7 +32,7 @@ export class Duplicates {
     }
 
     static toggleSave(disabled) {
-        let form = $('#new_client');
+        let form = $('form.simple_form');
         form.find('input[type=submit]').prop('disabled', disabled);
     }
 
