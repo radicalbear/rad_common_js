@@ -52,7 +52,7 @@ export class Duplicates {
                 Object.values(duplicate.duplicate_data).forEach(value => {
                     html += `<td>${value || ''}</td>`;
                 });
-                html += `<td><a href='${duplicate.duplicate_path}' class='btn btn-sm btn-primary'>Show Duplicate</a></td>`;
+                html += `<td><a href='${duplicate.duplicate_path}' class='btn btn-sm btn-warning' target='_blank'>Show Duplicate</a></td>`;
                 html += '</tr>';
             });
             html += '</table>';
