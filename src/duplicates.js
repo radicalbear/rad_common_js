@@ -17,18 +17,23 @@ export class Duplicates {
 
     static checkForDuplicates() {
         let duplicateData = $('#duplicate-toast').data();
-        let modelName = duplicateData.model.toLowerCase();
+        let modelName = this.duplicateModel().toLowerCase();
         let form = $(`#new_${modelName}`);
         let data = Duplicates.convertFormToJSON(form, modelName);
         $.ajax({
             type: 'POST',
             url: '/rad_common/duplicates/check_duplicate',
-            data: { record: data, model: duplicateData.model },
+            data: { record: data, model: Duplicates.duplicateModel() },
             success: function(data) {
                 Duplicates.processDuplicateData(data);
             },
             dataType: 'json'
         });
+    }
+
+    static duplicateModel() {
+        let duplicateData = $('#duplicate-toast').data();
+        return duplicateData.model;
     }
 
     static toggleSave(disabled) {
@@ -39,24 +44,9 @@ export class Duplicates {
     static processDuplicateData(data) {
         if(data.duplicate) {
             $('.toast').toast('show');
-            let html = '<table class=\'table\'>';
-            let first = data.duplicates[0].duplicate_data;
-            html += '<tr>';
-            Object.keys(first).forEach(field => {
-                html += `<th>${field}</th>`;
-            });
-            html += '<th>Actions</th>';
-            html += '</tr>';
-            data.duplicates.forEach(duplicate => {
-                html += '<tr>';
-                Object.values(duplicate.duplicate_data).forEach(value => {
-                    html += `<td>${value || ''}</td>`;
-                });
-                html += `<td><a href='${duplicate.duplicate_path}' class='btn btn-sm btn-warning' target='_blank'>Show Duplicate</a></td>`;
-                html += '</tr>';
-            });
-            html += '</table>';
-            $('.duplicate-card .duplicate-data').html(html);
+            this.buildDuplicateTable(data);
+            $('#duplicate-toast-header').html(`${this.duplicateModel()} May Already Exist`)
+            $('#create-anyway-label').html(`This is not a duplicate ${this.duplicateModel()}. Save as new record?`)
             $('.duplicate-card').show();
             this.toggleSave(true);
             $('.card-body').addClass('duplicate-body');
@@ -65,6 +55,27 @@ export class Duplicates {
             $('.duplicate-card').hide();
             $('.card-body').removeClass('duplicate-body');
         }
+    }
+
+    static buildDuplicateTable(data) {
+        let html = '<table class=\'table\'>';
+        let first = data.duplicates[0].duplicate_data;
+        html += '<tr>';
+        Object.keys(first).forEach(field => {
+            html += `<th>${field}</th>`;
+        });
+        html += '<th>Actions</th>';
+        html += '</tr>';
+        data.duplicates.forEach(duplicate => {
+            html += '<tr>';
+            Object.values(duplicate.duplicate_data).forEach(value => {
+                html += `<td>${value || ''}</td>`;
+            });
+            html += `<td><a href='${duplicate.duplicate_path}' class='btn btn-sm btn-warning' target='_blank'>View Matches</a></td>`;
+            html += '</tr>';
+        });
+        html += '</table>';
+        $('.duplicate-card .duplicate-data').html(html);
     }
 
     static convertFormToJSON(form, modelName) {
