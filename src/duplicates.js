@@ -16,7 +16,6 @@ export class Duplicates {
     }
 
     static checkForDuplicates() {
-        let duplicateData = $('#duplicate-toast').data();
         let modelName = this.duplicateModel().toLowerCase();
         let form = $(`#new_${modelName}`);
         let data = Duplicates.convertFormToJSON(form, modelName);
@@ -45,8 +44,8 @@ export class Duplicates {
         if(data.duplicate) {
             $('.toast').toast('show');
             this.buildDuplicateTable(data);
-            $('#duplicate-toast-header').html(`${this.duplicateModel()} May Already Exist`)
-            $('#create-anyway-label').html(`This is not a duplicate ${this.duplicateModel()}. Save as new record?`)
+            $('#duplicate-toast-header').html(`${this.duplicateModel()} May Already Exist`);
+            $('#create-anyway-label').html(`This is not a duplicate ${this.duplicateModel()}. Save as new record?`);
             $('.duplicate-card').show();
             this.toggleSave(true);
             $('.card-body').addClass('duplicate-body');
