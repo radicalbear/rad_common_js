@@ -238,3 +238,10 @@ form.simple_form.search button.btn-secondary.bs-placeholder {
 .selectpicker + .btn-light {
   border-color: #ced4da !important;
 }
+
+/* positioning of duplicate toast, can be used for other bottom toasts */
+.bottom-toast {
+  z-index: 5;
+  right: 0;
+  bottom: 0;
+}
