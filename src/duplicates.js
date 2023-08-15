@@ -21,7 +21,7 @@ export class Duplicates {
         let data = Duplicates.convertFormToJSON(form, modelName);
         $.ajax({
             type: 'POST',
-            url: '/rad_common/duplicates/check_duplicate',
+            url: '/duplicates/check_duplicate',
             data: { record: data, model: Duplicates.duplicateModel() },
             success: function(data) {
                 Duplicates.processDuplicateData(data);
