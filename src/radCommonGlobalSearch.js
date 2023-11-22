@@ -21,25 +21,29 @@ export class RadCommonGlobalSearch {
     $('.global-search-autocomplete').each(function(index, object) {
       var instance;
       instance = $(object).autocomplete().autocomplete('instance');
-      return instance._renderItem = function(ul, item) {
+      instance._renderItem = function(ul, item) {
+        $(ul).addClass('overflow-auto global-search-ul');
+
         var column, columns, i, j, ref, table, td, tr;
-        table = $('<table>');
-        tr = $('<tr>');
-        td = $('<td class=\'search-label\'>' + item.label + '</td>');
+        table = $('<table class="table table-sm table-hover">');
+        tr = $('<tr class="table-light border-bottom p-2">');
+        td = $('<td class="search-label text-left font-weight-bold">' + item.label + '</td>');
         tr.append(td);
         if (item.hasOwnProperty('columns') && item.columns.length > 0) {
           columns = item.columns;
           for (i = j = 0, ref = columns.length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
             column = columns[i];
             if (column !== void 0) {
-              tr.append('<td class=\'search-column-value\'>' + column + '</td>');
+              tr.append('<td class="text-right text-muted">' + column + '</td>');
+            } else {
+              tr.append('<td class="text-right text-muted"></td>');
             }
           }
         }
         tr.appendTo(table);
         if (item.scope_description !== void 0 && $('.super_search').val() === '1') {
-          tr = $('<tr>');
-          tr.append('<td class=\'search-scope-model-name\'>' + item.human_name + '</td>');
+          tr = $('<tr class="table-secondary w-100">');
+          tr.append('<td class="search-scope-model-name">' + item.human_name + '</td>');
         }
         tr.appendTo(table);
         table.appendTo(ul);
