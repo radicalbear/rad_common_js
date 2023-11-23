@@ -23,10 +23,14 @@ export class RadCommonGlobalSearch {
       instance = $(object).autocomplete().autocomplete('instance');
       instance._renderItem = function(ul, item) {
         $(ul).addClass('overflow-auto global-search-ul');
+        const isGlobal = item.scope_description !== void 0 && $('.super_search').val() === '1';
 
         var column, columns, i, j, ref, table, td, tr;
         table = $('<table class="table table-sm table-hover">');
         tr = $('<tr class="table-light border-bottom p-2">');
+        if (isGlobal) {
+          td = $('<td class="bg-secondary">' + item.scope_description + '</td>');
+        }
         td = $('<td class="search-label text-left font-weight-bold">' + item.label + '</td>');
         tr.append(td);
         if (item.hasOwnProperty('columns') && item.columns.length > 0) {
@@ -39,11 +43,6 @@ export class RadCommonGlobalSearch {
               tr.append('<td class="text-right text-muted"></td>');
             }
           }
-        }
-        tr.appendTo(table);
-        if (item.scope_description !== void 0 && $('.super_search').val() === '1') {
-          tr = $('<tr class="table-secondary w-100">');
-          tr.append('<td class="search-scope-model-name">' + item.human_name + '</td>');
         }
         tr.appendTo(table);
         table.appendTo(ul);
