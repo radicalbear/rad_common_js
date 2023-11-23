@@ -29,7 +29,7 @@ export class RadCommonGlobalSearch {
         table = $('<table class="table table-sm table-hover">');
         tr = $('<tr class="table-light border-bottom p-2">');
         if (isGlobal) {
-          td = $('<td class="bg-secondary">' + item.scope_description + '</td>');
+          td = $('<td class="bg-secondary">' + item.human_name + '</td>');
           tr.append(td);
         }
         td = $('<td class="search-label text-left font-weight-bold">' + item.label + '</td>');
