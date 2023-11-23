@@ -19,17 +19,18 @@ export class RadCommonGlobalSearch {
     });
 
     $('.global-search-autocomplete').each(function(index, object) {
-      var instance;
+      let instance;
       instance = $(object).autocomplete().autocomplete('instance');
       instance._renderItem = function(ul, item) {
         $(ul).addClass('overflow-auto global-search-ul');
         const isGlobal = item.scope_description !== void 0 && $('.super_search').val() === '1';
 
-        var column, columns, i, j, ref, table, td, tr;
+        let column, columns, i, j, ref, table, td, tr;
         table = $('<table class="table table-sm table-hover">');
         tr = $('<tr class="table-light border-bottom p-2">');
         if (isGlobal) {
           td = $('<td class="bg-secondary">' + item.scope_description + '</td>');
+          tr.append(td);
         }
         td = $('<td class="search-label text-left font-weight-bold">' + item.label + '</td>');
         tr.append(td);
