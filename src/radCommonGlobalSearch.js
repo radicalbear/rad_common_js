@@ -34,6 +34,7 @@ export class RadCommonGlobalSearch {
         }
         td = $('<td class="search-label text-left font-weight-bold">' + item.label + '</td>');
         tr.append(td);
+        
         if (item.hasOwnProperty('columns') && item.columns.length > 0) {
           columns = item.columns;
           for (i = j = 0, ref = columns.length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
@@ -44,13 +45,18 @@ export class RadCommonGlobalSearch {
           }
         }
         tr.appendTo(table);
+
         tr = $('<tr class="table-light border-bottom p-2">');
+        if (item.sub_label) {
+          td = $('<td class="search-label text-left text-secondary font-weight-bold">' + item.label + '</td>');
+          tr.append(td);
+        }
         if (item.hasOwnProperty('sub_columns') && item.sub_columns.length > 0) {
           columns = item.sub_columns;
           for (i = j = 0, ref = columns.length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
             column = columns[i];
             if (column !== void 0) {
-              tr.append('<td class="text-right text-muted">' + column + '</td>');
+              tr.append('<td class="text-secondary text-muted text-left">' + column + '</td>');
             }
           }
         }
