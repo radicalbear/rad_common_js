@@ -29,7 +29,7 @@ export class RadCommonGlobalSearch {
         table = $('<table class="table table-sm table-hover">');
         tr = $('<tr class="table-light border-bottom p-2">');
         if (isGlobal) {
-          td = $('<td class="bg-secondary">' + item.human_name + '</td>');
+          td = $('<td class="text-secondary">' + item.human_name + '</td>');
           tr.append(td);
         }
         td = $('<td class="search-label text-left font-weight-bold">' + item.label + '</td>');
@@ -40,8 +40,15 @@ export class RadCommonGlobalSearch {
             column = columns[i];
             if (column !== void 0) {
               tr.append('<td class="text-right text-muted">' + column + '</td>');
-            } else {
-              tr.append('<td class="text-right text-muted"></td>');
+            }
+          }
+        }
+        if (item.hasOwnProperty('sub_columns') && item.sub_columns.length > 0) {
+          columns = item.sub_columns;
+          for (i = j = 0, ref = columns.length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
+            column = columns[i];
+            if (column !== void 0) {
+              tr.append('<td class="text-right text-muted">' + column + '</td>');
             }
           }
         }
