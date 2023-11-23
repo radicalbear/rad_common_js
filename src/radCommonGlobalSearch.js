@@ -44,6 +44,7 @@ export class RadCommonGlobalSearch {
           }
         }
         tr.appendTo(table);
+        tr = $('<tr class="table-light border-bottom p-2">');
         if (item.hasOwnProperty('sub_columns') && item.sub_columns.length > 0) {
           columns = item.sub_columns;
           for (i = j = 0, ref = columns.length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
