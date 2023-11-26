@@ -18,35 +18,55 @@ export class RadCommonGlobalSearch {
       return RadCommonGlobalSearch.select_global_search_item($(this), event, ui);
     });
 
+    const highlightMatch = (text, term) => {
+      var matchStart = text.toLowerCase().indexOf(term.toLowerCase());
+      if (matchStart >= 0) {
+        var beforeMatch = text.slice(0, matchStart);
+        var matchText = text.slice(matchStart, matchStart + term.length);
+        var afterMatch = text.slice(matchStart + term.length);
+        return beforeMatch + '<span class="highlighted">' + matchText + '</span>' + afterMatch;
+      }
+      return text;
+    };
+
     $('.global-search-autocomplete').each(function(index, object) {
-      var instance;
-      instance = $(object).autocomplete().autocomplete('instance');
-      return instance._renderItem = function(ul, item) {
-        var column, columns, i, j, ref, table, td, tr;
-        table = $('<table>');
-        tr = $('<tr>');
-        td = $('<td class=\'search-label\'>' + item.label + '</td>');
-        tr.append(td);
+      const instance = $(object).autocomplete().autocomplete('instance');
+      instance._renderItem = function(ul, item) {
+        $(ul).addClass('overflow-auto global-search-ul');
+
+        const isGlobalSearch = (item.scope_description !== void 0 && $('.super_search').val() === '1');
+        const card = $('<div class="card border-0 shadow-sm position-relative">');
+        const additionalCardPadding = isGlobalSearch ? ' pt-4' : '';
+        const cardBody = $(`<div class="card-body p-3${additionalCardPadding} border-bottom">`).appendTo(card);
+
+        if (isGlobalSearch) {
+          $(`<span class="badge badge-info card-badge-corner">${item.human_name}</span>`).appendTo(card);
+        }
+
+        const searchTerm = $(object).val();
+        const labelHighlighted = highlightMatch(item.label, searchTerm);
+        const firstRow = $('<div class="d-flex justify-content-between align-items-center mb-2">').appendTo(cardBody);
+        $(`<div class="search-label font-weight-bold">${labelHighlighted}</div>`).appendTo(firstRow);
+
         if (item.hasOwnProperty('columns') && item.columns.length > 0) {
-          columns = item.columns;
-          for (i = j = 0, ref = columns.length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
-            column = columns[i];
-            if (column !== void 0) {
-              tr.append('<td class=\'search-column-value\'>' + column + '</td>');
+          const columnsContainer = $('<div class="d-flex flex-wrap text-muted">').appendTo(cardBody);
+          const filteredColumns = item.columns.filter(column => column);
+          filteredColumns.forEach((column, index) => {
+            const columnText = column ? highlightMatch(column, searchTerm) : '';
+            if (index > 0 && column && filteredColumns[index - 1]) {
+              columnsContainer.append('<span class="px-1">|</span>');
             }
-          }
+            if (column) {
+              $(`<div class="p-1">${columnText}</div>`).appendTo(columnsContainer);
+            }
+          });
         }
-        tr.appendTo(table);
-        if (item.scope_description !== void 0 && $('.super_search').val() === '1') {
-          tr = $('<tr>');
-          tr.append('<td class=\'search-scope-model-name\'>' + item.human_name + '</td>');
-        }
-        tr.appendTo(table);
-        table.appendTo(ul);
-        return table;
+
+        card.appendTo(ul);
+        return card;
       };
     });
-
+  
     $('.global_search_name').on('keyup keypress', function(e) {
       let code;
       code = e.keyCode || e.which;
