@@ -44,7 +44,7 @@ export class RadCommonGlobalSearch {
         }
 
         const searchTerm = $(object).val();
-        const labelHighlighted = highlightMatch(item.label, searchTerm);
+        const labelHighlighted = highlightMatch(item.label.toString(), searchTerm);
         const firstRow = $('<div class="d-flex justify-content-between align-items-center mb-2">').appendTo(cardBody);
         $(`<div class="search-label font-weight-bold">${labelHighlighted}</div>`).appendTo(firstRow);
 
@@ -52,7 +52,7 @@ export class RadCommonGlobalSearch {
           const columnsContainer = $('<div class="d-flex flex-wrap text-muted">').appendTo(cardBody);
           const filteredColumns = item.columns.filter(column => column);
           filteredColumns.forEach((column, index) => {
-            const columnText = column ? highlightMatch(column, searchTerm) : '';
+            const columnText = column ? highlightMatch(column.toString(), searchTerm) : '';
             if (index > 0 && column && filteredColumns[index - 1]) {
               columnsContainer.append('<span class="px-1">|</span>');
             }
