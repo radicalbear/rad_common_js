@@ -60,10 +60,12 @@ export class RadCommonGeneral {
 
   static checkExternalUser() {
     if ($('#user_external').is(':checked')) {
+      $('.internal').find('input').prop('checked', false);
       $('.internal').hide();
       return $('.external').show();
     } else {
       $('.internal').show();
+      $('.external').find('input').prop('checked', false);
       return $('.external').hide();
     }
   }
