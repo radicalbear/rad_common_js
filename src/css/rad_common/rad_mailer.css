@@ -255,6 +255,10 @@ tr.header-row th.text-right {
   text-align: right;
 }
 
+td.text-right {
+  text-align: right;
+}
+
 tr.odd
 {
   background-color: #E3E3E3;
