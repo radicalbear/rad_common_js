@@ -16,7 +16,7 @@ export class Duplicates {
     }
 
     static checkForDuplicates() {
-        let modelName = this.duplicateModel().toLowerCase();
+        let modelName = this.duplicateModel().replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase();
         let form = $(`#new_${modelName}`);
         let data = Duplicates.convertFormToJSON(form, modelName);
         $.ajax({
