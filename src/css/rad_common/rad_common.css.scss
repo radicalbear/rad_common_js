@@ -248,10 +248,10 @@ form.simple_form.search button.btn-secondary.bs-placeholder {
 
 /* TODO: Remove this in bootstrap 5 which has relevant utility classes */
 .top-right-toast {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  z-index: 5;
+  z-index: 1050;
 }
 
 .top-right-toast .toast-body {
