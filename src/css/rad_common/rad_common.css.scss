@@ -241,17 +241,10 @@ form.simple_form.search button.btn-secondary.bs-placeholder {
 
 /* positioning of duplicate toast, can be used for other bottom toasts */
 .bottom-toast {
+  position: fixed;
   z-index: 5;
   right: 0;
   bottom: 0;
-}
-
-/* TODO: Remove this in bootstrap 5 which has relevant utility classes */
-.top-right-toast {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1050;
 }
 
 .top-right-toast .toast-body {
