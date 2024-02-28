@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 require('jquery');
 require('@rails/ujs').start();
-require('popper.js');
+require('@popperjs/core');
 require('bootstrap');
 require('bootstrap-select');
 require('readmore-js');

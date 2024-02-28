@@ -19,7 +19,7 @@
     "jquery-ujs": "^1.2.3",
     "jquery.are-you-sure": "^1.9.0",
     "moment": "^2.29.4",
-    "popper.js": "^1.16.1",
+    "@popperjs/core": "^2.11.8",
     "postcss": "^8.2.10",
     "readmore-js": "^2.2.1",
     "trix": "^1.0.0"
