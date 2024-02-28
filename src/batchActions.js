@@ -1,40 +1,61 @@
 export class BatchActions {
   static setup() {
-    $('.batch-action-tooltip').tooltip();
-    $('#batch_action_select_all').click(function() {
-      let is_checked;
-      is_checked = $(this).is(':checked');
-      if (is_checked) {
-        $('#batch-action-dropdown').removeClass('disabled');
-        $('.batch-action-tooltip').tooltip('disable');
-      } else {
-        $('#batch-action-dropdown').addClass('disabled');
-        $('.batch-action-tooltip').tooltip('enable');
-      }
-      return $('.bulk-action-checkbox').each(function() {
-        return $(this).prop('checked', is_checked);
+    document.querySelectorAll('.batch-action-tooltip').forEach(el => new bootstrap.Tooltip(el));
+
+    const batchActionSelectAll = document.getElementById('batch_action_select_all');
+    const batchActionDropdown = document.getElementById('batch-action-dropdown');
+    const bulkActionCheckboxes = document.querySelectorAll('.bulk-action-checkbox');
+
+    if (batchActionSelectAll) {
+      batchActionSelectAll.addEventListener('click', function() {
+        const isChecked = this.checked;
+        if (batchActionDropdown) {
+          if (isChecked) {
+            batchActionDropdown.classList.remove('disabled');
+            document.querySelectorAll('.batch-action-tooltip').forEach(tooltipEl => {
+              let tooltipInstance = bootstrap.Tooltip.getInstance(tooltipEl);
+              if (tooltipInstance) {
+                tooltipInstance.disable();
+              }
+            });
+          } else {
+            batchActionDropdown.classList.add('disabled');
+            document.querySelectorAll('.batch-action-tooltip').forEach(tooltipEl => {
+              let tooltipInstance = bootstrap.Tooltip.getInstance(tooltipEl);
+              if (tooltipInstance) {
+                tooltipInstance.enable();
+              }
+            });
+          }
+        }
+        bulkActionCheckboxes.forEach(cb => cb.checked = isChecked);
       });
-    });
-    return $('.bulk-action-checkbox').click(function() {
-      let all_deselected;
-      if ($(this).is(':checked')) {
-        $('#batch-action-dropdown').removeClass('disabled');
-        $('.batch-action-tooltip').tooltip('disable');
-        if ($('.bulk-action-checkbox').toArray().every(function(cb) {
-          return cb.checked;
-        })) {
-          return $('#batch_action_select_all').prop('checked', true);
+    }
+
+    bulkActionCheckboxes.forEach(cb => {
+      cb.addEventListener('click', function() {
+        const allChecked = [...bulkActionCheckboxes].every(cb => cb.checked);
+        const allDeselected = [...bulkActionCheckboxes].every(cb => !cb.checked);
+        if (batchActionDropdown) {
+          if (this.checked) {
+            batchActionDropdown.classList.remove('disabled');
+            if (allChecked) {
+              batchActionSelectAll.checked = true;
+            }
+          } else {
+            batchActionSelectAll.checked = false;
+            if (allDeselected) {
+              batchActionDropdown.classList.add('disabled');
+            }
+          }
+          document.querySelectorAll('.batch-action-tooltip').forEach(tooltipEl => {
+            let tooltipInstance = bootstrap.Tooltip.getInstance(tooltipEl);
+            if (tooltipInstance) {
+              this.checked ? tooltipInstance.disable() : tooltipInstance.enable();
+            }
+          });
         }
-      } else {
-        $('#batch_action_select_all').prop('checked', false);
-        all_deselected = $('.bulk-action-checkbox').toArray().every(function(cb) {
-          return !cb.checked;
-        });
-        if (all_deselected) {
-          $('#batch-action-dropdown').addClass('disabled');
-          return $('.batch-action-tooltip').tooltip('enable');
-        }
-      }
+      });
     });
   }
 }

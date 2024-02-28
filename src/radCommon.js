@@ -40,7 +40,19 @@ export class RadCommon {
   }
 
   static bootstrapSetup() {
-    $('[data-toggle="tooltip"]').tooltip();
-    $('[data-toggle="popover"]').popover();
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+    popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl);
+    });
+
+    var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
+    collapseElementList.map(function(collapseEl) {
+      return new bootstrap.Collapse(collapseEl);
+    });
   }
 }
