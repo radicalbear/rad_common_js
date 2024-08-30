@@ -42,9 +42,10 @@ export class RadSearchDateFilter {
 
       const parentContainer = $(target.parentElement);
       if (parentContainer.length) {
-        const filter = parentContainer.data('filter-target');
-        const startInput = $(`[name="search[${filter}_start]"]`);
-        const endInput = $(`[name="search[${filter}_end]"]`);
+        const filterStart = parentContainer.data('filter-target-start');
+        const filterEnd = parentContainer.data('filter-target-end');
+        const startInput = $(filterStart);
+        const endInput = $(filterEnd);
         startInput.val(startDate.format('YYYY-MM-DD'));
         endInput.val(endDate.format('YYYY-MM-DD'));
       }
