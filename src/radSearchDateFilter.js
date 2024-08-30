@@ -44,10 +44,14 @@ export class RadSearchDateFilter {
       if (parentContainer.length) {
         const filterStart = parentContainer.data('filter-target-start');
         const filterEnd = parentContainer.data('filter-target-end');
-        const startInput = $(filterStart);
-        const endInput = $(filterEnd);
-        startInput.val(startDate.format('YYYY-MM-DD'));
-        endInput.val(endDate.format('YYYY-MM-DD'));
+        const form = parentContainer.closest('form');
+        const startInput = form.find(filterStart);
+        const endInput = form.find(filterEnd);
+      
+        if (startInput.length && endInput.length) {
+          startInput.val(startDate.format('YYYY-MM-DD'));
+          endInput.val(endDate.format('YYYY-MM-DD'));
+        }
       }
     }
 
