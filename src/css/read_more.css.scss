@@ -1,10 +1,13 @@
 .read-more + [data-readmore-toggle], selector[data-readmore] {
   display: block;
   width: 100%;
-  padding-left: 4px;
 }
 
 .read-more[data-readmore] {
   transition: height 75ms;
   overflow: hidden;
+}
+
+.read-more {
+  padding-left: 4px;
 }
