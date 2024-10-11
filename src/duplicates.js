@@ -78,12 +78,22 @@ export class Duplicates {
     }
 
     static convertFormToJSON(form, modelName) {
-        return $(form)
-            .serializeArray()
-            .reduce(function (json, { name, value }) {
-                name = name.replace(modelName + '[', '').replace(']', '');
-                json[name] = value;
-                return json;
-            }, {});
+      let formData = $(form).serializeArray();
+      let json = {};
+
+      formData.forEach(({ name, value }) => {
+        name = name.replace(`${modelName}[`, '').replace(/\]$/, '');
+        if (name.endsWith('[]')) {
+          name = name.slice(0, -2);
+          if (!json[name]) {
+            json[name] = [];
+          }
+          json[name].push(value);
+        } else {
+          json[name] = value;
+        }
+      });
+
+      return json;
     }
 }
