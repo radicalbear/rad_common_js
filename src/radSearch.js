@@ -16,7 +16,7 @@ export class RadSearch {
 
       var options = {
         ajax: {
-          url: '/rad_common/global_search',
+          url: '/global_search',
           type: 'GET',
           dataType: 'json'
         },
@@ -52,7 +52,7 @@ export class RadSearch {
           searchPlaceholder: 'Start typing to search',
           emptyTitle: 'Nothing selected'
         }
-      };  
+      };
       $('.selectpicker-search').selectpicker({ liveSearch: true }).ajaxSelectPicker(options);
     });
   }
