@@ -23,6 +23,7 @@ import { BatchActions } from './batchActions';
 import { Duplicates } from './duplicates';
 import { RadSearchDateFilter } from './radSearchDateFilter';
 import { Toast } from './toast';
+import { SentryTest } from './sentry';
 
 export class RadCommon {
   static setup() {
@@ -40,6 +41,7 @@ export class RadCommon {
       BatchActions.setup();
       RadSearchDateFilter.setup();
       Toast.setup();
+      SentryTest.setup();
     });
   }
 
