@@ -27,7 +27,7 @@ import { SentryTest } from './sentry';
 
 export class RadCommon {
   static setup() {
-    $(document).ready(function () {
+    document.addEventListener('turbo:render', function(event) {
       RadCommonAutoComplete.setup();
       RadCommonGlobalSearch.setup();
       RadCommonGeneral.setup();
@@ -42,6 +42,7 @@ export class RadCommon {
       RadSearchDateFilter.setup();
       Toast.setup();
       SentryTest.setup();
+      $('.selectpicker').selectpicker();
     });
   }
 
