@@ -27,7 +27,7 @@ import { SentryTest } from './sentry';
 
 export class RadCommon {
   static setup() {
-    document.addEventListener('turbo:render', function(event) {
+    const setupSteps = () => {
       RadCommonAutoComplete.setup();
       RadCommonGlobalSearch.setup();
       RadCommonGeneral.setup();
@@ -43,6 +43,17 @@ export class RadCommon {
       Toast.setup();
       SentryTest.setup();
       $('.selectpicker').selectpicker();
+    };
+    document.addEventListener('turbo:render', function(event) {
+      setupSteps();
+    });
+
+    document.addEventListener('turbo:load', function(event) {
+      setupSteps();
+    });
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+      setupSteps();
     });
   }
 
