@@ -9,7 +9,6 @@
   "dependencies": {
     "@rails/actiontext": "^7.2.2",
     "@rails/ujs": "^6.0.5",
-    "@rails/webpacker": "5.4.3",
     "@sentry/browser": "^8.38.0",
     "ajax-bootstrap-select": "^1.4.5",
     "bootstrap": "^4.0.0",
