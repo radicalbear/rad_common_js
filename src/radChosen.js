@@ -1,5 +1,5 @@
 require('chosen-js/chosen.jquery.min');
-import 'chosen-js/chosen.min.css';
+// import 'chosen-js/chosen.min.css';
 
 export class RadChosen {
   static setup() {
