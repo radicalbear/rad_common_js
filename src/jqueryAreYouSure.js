@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 (function($) {
 
   $.fn.areYouSure = function(options) {
@@ -177,4 +179,4 @@
       initForm($form);
     });
   };
-})(jQuery);
+})($);
