@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export class RadCommonAutoComplete {
   constructor( e ) {
     this.e = e;
