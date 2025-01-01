@@ -9,7 +9,6 @@ require('ajax-bootstrap-select');
 require('./richtext');
 
 import { RadCommonGlobalSearch } from './radCommonGlobalSearch';
-import { RadCommonAutoComplete } from './radCommonAutoComplete';
 import { RadCommonDynamicUpdater } from './radCommonDynamicUpdater';
 import { RadCommonGeneral } from './radCommonGeneral';
 import { AreYouSure } from './areYouSure';
@@ -25,7 +24,6 @@ import { SentryTest } from './sentry';
 export class RadCommon {
   static setup() {
     $(document).ready(function () {
-      RadCommonAutoComplete.setup();
       RadCommonGlobalSearch.setup();
       RadCommonGeneral.setup();
       RadCommonDynamicUpdater.setup();
