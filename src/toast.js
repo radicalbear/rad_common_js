@@ -1,10 +1,12 @@
 export class Toast {
   static success(title, message, time = 5000) {
+    $('#toast-nav .toast-header').removeClass('toast-error');
     $('#toast-nav .toast-header').addClass('toast-success');
     Toast.display(title, message, time, 'polite', 'status');
   }
 
   static error(title, message, time = 5000) {
+    $('#toast-nav .toast-header').removeClass('toast-success');
     $('#toast-nav .toast-header').addClass('toast-error');
     Toast.display(title, message, time, 'assertive', 'alert');
   }
