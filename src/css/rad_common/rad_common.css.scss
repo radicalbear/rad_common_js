@@ -242,7 +242,7 @@ form.simple_form.search button.btn-secondary.bs-placeholder {
 /* positioning of duplicate toast, can be used for other bottom toasts */
 .bottom-toast {
   position: fixed;
-  z-index: 5;
+  z-index: 1051;
   right: 0;
   bottom: 0;
 }
