@@ -22,6 +22,8 @@ import { RadSearchDateFilter } from './radSearchDateFilter';
 import { Toast } from './toast';
 import { SentryTest } from './sentry';
 
+import './radTurbo';
+
 export class RadCommon {
   static setup() {
     $(document).ready(function () {
