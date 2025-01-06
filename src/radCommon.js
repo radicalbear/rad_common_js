@@ -18,7 +18,6 @@ import { DateSetup } from './dateSetup';
 import { RadSearch } from './radSearch';
 import { BatchActions } from './batchActions';
 import { Duplicates } from './duplicates';
-import { Toast } from './toast';
 import { SentryTest } from './sentry';
 
 import './radTurbo';
@@ -37,7 +36,6 @@ export class RadCommon {
       RadSearch.setup();
       Duplicates.setup();
       BatchActions.setup();
-      Toast.setup();
       SentryTest.setup();
     });
   }
