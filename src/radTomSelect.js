@@ -39,14 +39,14 @@ export class RadTomSelect {
           if (!query.length) return callback();
 
           const searchScope = el.dataset.globalSearchScope || null;
-          const excludedIds = el.dataset.excludedIds ? JSON.parse(el.dataset.excludedIds) : [];
+          const excludedIds = el.dataset.excludedIds ? el.dataset.excludedIds.replaceAll(' ', ',') : '';
           const searchMode = el.dataset.searchMode;
 
           const params = new URLSearchParams({
             term: query,
             global_search_scope: searchScope,
             search_mode: searchMode,
-            excluded_ids: excludedIds.join(',')
+            excluded_ids: excludedIds
           });
 
           fetch(`/global_search?${params.toString()}`, {
@@ -68,8 +68,8 @@ export class RadTomSelect {
 
               if (!this.getValue()) {
                 results.unshift({
-                  id: null,
-                  label: 'Clear Option',
+                  id: '',
+                  label: 'None',
                   subtext: null
                 });
               }
