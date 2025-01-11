@@ -17,3 +17,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+// Tweak dropdown height
+.ts-dropdown-content{
+  max-height: 300px !important;
+}
