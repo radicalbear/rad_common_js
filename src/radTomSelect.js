@@ -84,7 +84,9 @@ export class RadTomSelect {
         render: {
           option: function(item, escape) {
             const label = escape(item.label || '');
-            const subtext = item.subtext ? `<small class="text-muted">${escape(item.subtext)}</small>` : '';
+            const subtext = this.input.dataset.subtext === 'true' && item.subtext ?
+              `<small class="text-muted">${escape(item.subtext)}</small>` :
+              '';
             return `
               <div>
                 <span>${label}</span>
