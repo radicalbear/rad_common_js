@@ -11,7 +11,6 @@ import { RadCommonDynamicUpdater } from './radCommonDynamicUpdater';
 import { RadCommonGeneral } from './radCommonGeneral';
 import { AreYouSure } from './areYouSure';
 import { DateSetup } from './dateSetup';
-import { RadSearch } from './radSearch';
 import { BatchActions } from './batchActions';
 import { Duplicates } from './duplicates';
 import { RadTomSelect } from './radTomSelect';
@@ -29,7 +28,6 @@ export class RadCommon {
       AreYouSure.setup();
       RadCommon.bootstrapSetup();
       DateSetup.setup();
-      RadSearch.setup();
       Duplicates.setup();
       BatchActions.setup();
       SentryTest.setup();
