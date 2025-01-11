@@ -55,16 +55,15 @@ export class RadTomSelect {
           })
             .then(response => response.json())
             .then((data) => {
+              this.clearOptions();
+              this.clear();
+
               const results = data.map((item) => {
                 return {
                   ...item,
                   subtext: item.columns ? item.columns.join(' ') : null
                 };
               });
-
-              if (!results.length) {
-                this.clearOptions();
-              }
 
               if (!this.getValue()) {
                 results.unshift({
