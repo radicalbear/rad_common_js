@@ -16,13 +16,7 @@ export class RadTomSelect {
         placeholder: 'Start typing to search',
         plugins,
         searchField: 'text',
-        allowEmptyOption: !el.multiple,
-        onDropdownOpen: function() {
-          this.dropdown.querySelector('input').placeholder = '';
-        },
-        onDropdownClose: function() {
-          this.dropdown.querySelector('input').placeholder = this.settings.placeholder;
-        }
+        allowEmptyOption: !el.multiple
       });
     });
 
@@ -40,12 +34,6 @@ export class RadTomSelect {
         plugins,
         allowEmptyOption: true,
         create: false,
-        onDropdownOpen: function() {
-          this.dropdown.querySelector('input').placeholder = '';
-        },
-        onDropdownClose: function() {
-          this.dropdown.querySelector('input').placeholder = this.settings.placeholder;
-        },
 
         load: function(query, callback) {
           if (!query.length) return callback();
