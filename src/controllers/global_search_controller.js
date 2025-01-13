@@ -56,7 +56,7 @@ export default class extends Controller {
       placeholder: this.inputTarget.dataset.placeholder || 'Start typing to search',
       valueField: 'id',
       labelField: 'label',
-      searchField: ['label'],
+      searchField: [],
       plugins,
       allowEmptyOption: false,
       create: false,
