@@ -105,7 +105,7 @@ export default class extends Controller {
 
           return `
           <div>
-            <a href="${url}" class="text-dark">
+            <a href="${url}" class="${item.active ? 'text-dark' : 'text-danger'}">
               <div>${label}</div>
               ${subtext ? subtext : ''}
             </a>
