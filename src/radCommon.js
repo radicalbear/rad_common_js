@@ -5,8 +5,6 @@ require('bootstrap');
 require('readmore-js');
 require('./richtext');
 
-import { RadCommonGlobalSearch } from './radCommonGlobalSearch';
-import { RadCommonAutoComplete } from './radCommonAutoComplete';
 import { RadCommonDynamicUpdater } from './radCommonDynamicUpdater';
 import { RadCommonGeneral } from './radCommonGeneral';
 import { AreYouSure } from './areYouSure';
@@ -21,8 +19,6 @@ import './radTurbo';
 export class RadCommon {
   static setup() {
     $(document).ready(function () {
-      RadCommonAutoComplete.setup();
-      RadCommonGlobalSearch.setup();
       RadCommonGeneral.setup();
       RadCommonDynamicUpdater.setup();
       AreYouSure.setup();
