@@ -44,28 +44,19 @@ export default class extends Controller {
   }
 
   initializeTomSelect() {
-    const plugins = [];
-    if (!this.inputTarget.dataset.inputStyle) {
-      plugins.push(['dropdown_input']);
-    }
-    if (this.inputTarget.multiple) {
-      plugins.push('remove_button');
-    }
-
     new TomSelect(this.inputTarget, {
       placeholder: this.inputTarget.dataset.placeholder || 'Start typing to search',
       valueField: 'id',
       labelField: 'label',
       searchField: [],
-      plugins,
       allowEmptyOption: false,
       create: false,
       closeAfterSelect: true,
 
-      load: (query, callback) => {
+      load: function(query, callback) {
         if (!query.length) return callback();
 
-        const searchScope = this.inputTarget.dataset.globalSearchScope || '';
+        const searchScope = this.input.dataset.globalSearchScope || '';
         const superSearch = document.querySelector('.super_search')?.checked ? 'true' : 'false';
 
         const params = new URLSearchParams({
@@ -80,6 +71,9 @@ export default class extends Controller {
         })
           .then((response) => response.json())
           .then((data) => {
+            this.clearOptions();
+            this.clear();
+
             const results = data.map((item) => ({
               ...item,
               subtext: item.columns ? item.columns.filter((item) => !!item).join(' | ') : null,
@@ -92,7 +86,9 @@ export default class extends Controller {
             }));
             callback(results);
           })
-          .catch(() => callback());
+          .catch((e) => {
+            callback();
+          });
       },
 
       render: {
