@@ -22,3 +22,9 @@
 .ts-dropdown-content{
   max-height: 300px !important;
 }
+
+// Show full text in multi select
+.ts-wrapper.multi .ts-control .item {
+  white-space: wrap;
+  overflow: visible;
+}
