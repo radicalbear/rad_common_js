@@ -28,3 +28,8 @@
   white-space: wrap;
   overflow: visible;
 }
+
+.ts-wrapper.multi .ts-control>div.active {
+  background: #efefef !important;
+  color: #343a40 !important;
+}

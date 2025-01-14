@@ -16,7 +16,13 @@ export class RadTomSelect {
         placeholder: 'Start typing to search',
         plugins,
         searchField: 'text',
-        allowEmptyOption: !el.multiple
+        allowEmptyOption: !el.multiple,
+        closeAfterSelect: !el.multiple,
+        onItemSelect: function () {
+          this.refreshOptions(false);
+          this.open();
+          return false;
+        }
       });
     });
 
