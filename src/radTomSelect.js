@@ -18,6 +18,7 @@ export class RadTomSelect {
         searchField: 'text',
         allowEmptyOption: !el.multiple,
         closeAfterSelect: !el.multiple,
+        maxOptions: el.dataset.tsMaxOptions || null,
         onItemSelect: function () {
           this.refreshOptions(false);
           this.open();
