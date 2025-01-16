@@ -11,9 +11,10 @@ export class RadTomSelect {
         plugins.push('remove_button');
       }
 
+      const initialPlaceholder = el.dataset.placeholder || 'Start typing to search';
       new TomSelect(el, {
         create: el.dataset.tsCreate === 'true',
-        placeholder: 'Start typing to search',
+        placeholder: initialPlaceholder,
         plugins,
         searchField: 'text',
         allowEmptyOption: !el.multiple,
@@ -23,7 +24,13 @@ export class RadTomSelect {
           this.refreshOptions(false);
           this.open();
           return false;
-        }
+        },
+        onDropdownOpen: function () {
+          this.control_input.placeholder = 'Start typing to search';
+        },
+        onDropdownClose: function () {
+          this.control_input.placeholder = initialPlaceholder;
+        },
       });
     });
 
