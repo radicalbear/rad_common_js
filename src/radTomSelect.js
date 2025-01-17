@@ -31,6 +31,13 @@ export class RadTomSelect {
         onDropdownClose: function () {
           this.control_input.placeholder = initialPlaceholder;
         },
+        render: {
+          option: function (item, escape) {
+            const isInactive = el.querySelector(`option[value="${item.value}"]`)?.getAttribute('data-inactive') === 'true';
+            const className = isInactive ? 'text-danger' : '';
+            return `<div class="${className}">${escape(item.text)}</div>`;
+          }
+        }
       });
     });
 
@@ -102,7 +109,7 @@ export class RadTomSelect {
               '';
             return `
               <div>
-                <span>${label}</span>
+                <span class="${item.active ? '' : 'text-danger'}">${label}</span>
                 ${subtext ? ' &mdash; ' + subtext : ''}
               </div>
             `;
