@@ -1,24 +1,20 @@
-.ui-state-active {
-  background: #f7f7f7 !important;
-  border: none !important;
+.global-search-select {
+  width: 175px;
+  max-height: 500px;
 }
 
-.global-search-ul {
-  max-height: 800px;
-  min-width: 500px;
+.global-search-select .ts-control {
+  border-radius: 0;
 }
 
-.card-badge-corner {
-  position: absolute !important;
-  top: 0;
-  right: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  font-size: 1.1rem;
-  padding: 0.25em 0.6em !important;
+.global-search-select .ts-dropdown {
+  width: 40vh;
 }
 
-.highlighted {
-  background-color: yellow;
-  font-weight: bold;
+.global-search-select .item {
+  display: none;
+}
+
+.global-search-select .option {
+  border-bottom: 1px solid #e0e0e0;
 }
