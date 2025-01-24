@@ -61,7 +61,7 @@ export class RadTomSelect {
 
           const searchScope = el.dataset.globalSearchScope || null;
           const excludedIds = el.dataset.excludedIds ? el.dataset.excludedIds.replaceAll(' ', ',') : '';
-          const searchMode = el.dataset.searchMode;
+          const searchMode = el.dataset.globalSearchMode;
 
           const params = new URLSearchParams({
             term: query,
