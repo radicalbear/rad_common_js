@@ -21,6 +21,7 @@ export default class extends Controller {
     tomSelect.settings.placeholder = event.currentTarget.textContent;
     tomSelect.inputState();
     this.inputTarget.dataset.globalSearchScope = newScope;
+    tomSelect.focus();
   }
 
   toggleSuperSearch() {
