@@ -1,15 +1,27 @@
 export class BatchActions {
   static setup() {
     $('.batch-action-tooltip').tooltip();
+    const enableDropdown = () => {
+      $('#batch-action-dropdown').removeClass('disabled');
+      $('.batch-action-tooltip').tooltip('disable');
+    }
+    const disableDropdown = () => {
+      $('#batch-action-dropdown').addClass('disabled');
+      $('.batch-action-tooltip').tooltip('enable');
+    }
+
+    // Initial page load
+    if ($('.bulk-action-checkbox').toArray().some((cb) => cb.checked)) {
+      enableDropdown();
+    }
+  
     $('#batch_action_select_all').click(function() {
       let is_checked;
       is_checked = $(this).is(':checked');
       if (is_checked) {
-        $('#batch-action-dropdown').removeClass('disabled');
-        $('.batch-action-tooltip').tooltip('disable');
+        enableDropdown();
       } else {
-        $('#batch-action-dropdown').addClass('disabled');
-        $('.batch-action-tooltip').tooltip('enable');
+        disableDropdown();
       }
       return $('.bulk-action-checkbox').each(function() {
         return $(this).prop('checked', is_checked);
@@ -18,8 +30,7 @@ export class BatchActions {
     return $('.bulk-action-checkbox').click(function() {
       let all_deselected;
       if ($(this).is(':checked')) {
-        $('#batch-action-dropdown').removeClass('disabled');
-        $('.batch-action-tooltip').tooltip('disable');
+        enableDropdown();
         if ($('.bulk-action-checkbox').toArray().every(function(cb) {
           return cb.checked;
         })) {
@@ -31,8 +42,7 @@ export class BatchActions {
           return !cb.checked;
         });
         if (all_deselected) {
-          $('#batch-action-dropdown').addClass('disabled');
-          return $('.batch-action-tooltip').tooltip('enable');
+          disableDropdown();
         }
       }
     });

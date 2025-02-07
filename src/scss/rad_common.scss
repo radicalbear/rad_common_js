@@ -241,7 +241,24 @@ form.simple_form.search button.btn-secondary.bs-placeholder {
 
 /* positioning of duplicate toast, can be used for other bottom toasts */
 .bottom-toast {
-  z-index: 5;
+  position: fixed;
+  z-index: 1051;
   right: 0;
   bottom: 0;
+}
+
+.top-right-toast .toast-body {
+  min-width: 175px;
+}
+
+.toast-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.toast-error {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
 }
