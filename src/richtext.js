@@ -18,7 +18,6 @@ class RichText {
 
   insertHeadingElements() {
     this.removeOriginalHeadingButton();
-    // this.removeAttachmentButton();
     this.insertNewHeadingButton();
     this.insertHeadingDialog();
   }
@@ -98,7 +97,7 @@ class RichText {
         <div class="trix-dialog__link-fields">
           <input type="text" name="x-heading" class="trix-dialog-hidden__input" data-trix-input>
           <div class="trix-button-group">
-            <button type="button" class="trix-button trix-button--dialog" data-trix-attribute="heading1">HB</button>
+            <button type="button" class="trix-button trix-button--dialog" data-trix-attribute="heading1">H1</button>
             <button type="button" class="trix-button trix-button--dialog" data-trix-attribute="heading2">H2</button>
             <button type="button" class="trix-button trix-button--dialog" data-trix-attribute="heading3">H3</button>
             <button type="button" class="trix-button trix-button--dialog" data-trix-attribute="heading4">H4</button>
