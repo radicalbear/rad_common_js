@@ -32,7 +32,9 @@ export class RadCommon {
   }
 
   static bootstrapSetup() {
-    $('[data-toggle="tooltip"]').tooltip();
-    $('[data-toggle="popover"]').popover();
+    if (typeof $('[data-toggle="tooltip"]').tooltip === 'function') {
+      $('[data-toggle="tooltip"]').tooltip();
+      $('[data-toggle="popover"]').popover();
+    }
   }
 }
