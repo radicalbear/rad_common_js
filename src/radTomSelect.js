@@ -2,7 +2,7 @@ import TomSelect from 'tom-select';
 
 export class RadTomSelect {
   static setup() {
-    document.querySelectorAll('.selectpicker').forEach((el) => {
+    document.querySelectorAll('select.selectpicker,input.selectpicker').forEach((el) => {
       if (el.tomselect) {
         return;
       }
@@ -41,7 +41,7 @@ export class RadTomSelect {
       });
     });
 
-    document.querySelectorAll('.selectpicker-search').forEach((el) => {
+    document.querySelectorAll('select.selectpicker-search,input.selectpicker-search').forEach((el) => {
       const plugins = ['dropdown_input'];
       if (el.multiple) {
         plugins.push('remove_button');
